@@ -1,73 +1,84 @@
-# React + TypeScript + Vite
+# Chem-Sim 🧪
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sophisticated Chemical Simulation Laboratory built with React and TypeScript. Explore the wonders of chemistry through an interactive, visual interface designed for discovery and learning.
 
-Currently, two official plugins are available:
+![Sample Screenshot](https://via.placeholder.com/800x450/0a0f1e/f8fafc?text=Chem-Sim+Laboratory+Interface)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Overview
 
-## React Compiler
+**Chem-Sim** (Reaction Lab) is a modern web application that allows users to experiment with chemical elements and reactions in a gamified environment. Drag elements onto the workbench, apply conditions, and discover new substances through realistic chemical synthesis pathways.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Key Features
 
-## Expanding the ESLint configuration
+- **Interactive Workbench**: A drag-and-drop environment for combining chemical elements.
+- **Dynamic Element Library**: Access a wide range of elements with their real atomic properties.
+- **Advanced Reaction Engine**: Simulate complex chemical reactions based on real-world stoichiometry and conditions.
+- **Objective System**: Progress through tiers of challenges, from basic inorganic synthesis to advanced organic chemistry.
+- **Glassmorphism UI**: A premium, dark-themed interface with smooth animations and micro-interactions.
+- **Reaction Log**: Keep track of all your successful discoveries and synthesis equations.
+- **Discovery Feedback**: Detailed information on newly synthesized molecules and materials.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Core**: React 19, TypeScript
+- **Build Tool**: Vite
+- **Styling**: Vanilla CSS (Custom Glassmorphism Design System)
+- **State Management**: Custom React Hooks
+- **Icons**: SVG-based element representations
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📦 Project Structure
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+src/
+├── components/     # UI Components (Workbench, Library, ObjectivePanel, etc.)
+├── data/           # Chemical data (Elements, Reactions, Objectives, Quizzes)
+├── hooks/          # Core logic (Game Engine, Objective System)
+├── styles/         # Global styles and design system
+└── App.tsx         # Main application entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚥 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Node.js (Latest LTS recommended)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/vegeta2op/Chem-Sim.git
+   cd Chem-Sim
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## 🧪 How to Play
+
+1. **Select Elements**: Browse the sidebar library for available chemical elements.
+2. **Setup Workbench**: Drag and drop elements onto the central workbench area.
+3. **Initiate Reaction**: Click the "React" button. If the combination and conditions are correct, a new substance will be discovered.
+4. **Complete Objectives**: Check the Objective Panel for specific synthesis goals and progress through chemistry tiers.
+5. **Reset Progress**: Use the "Reset Progress" button in the top right to start a fresh laboratory session.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+Developed with ❤️ by [vegeta2op](https://github.com/vegeta2op)
