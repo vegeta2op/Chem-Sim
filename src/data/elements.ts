@@ -1,4 +1,3 @@
-
 export type ElementType = 'Solid' | 'Liquid' | 'Gas' | 'Unknown' | 'Compound';
 export type BondType = 'single' | 'double' | 'triple';
 
@@ -199,6 +198,26 @@ export const INITIAL_ELEMENTS: ChemicalElement[] = [
         { "element": "C", "x": -1, "y": 0, "bonds": [{ "to": 0, "type": "single" }, { "to": 2, "type": "triple" }] },
         { "element": "C", "x": 1, "y": 0, "bonds": [{ "to": 1, "type": "triple" }, { "to": 3, "type": "single" }] },
         { "element": "H", "x": 2, "y": 0, "bonds": [{ "to": 2, "type": "single" }] }
+      ],
+      "showHydrogens": true
+    }
+  },
+  {
+    "id": "NH3",
+    "name": "Ammonia",
+    "atomicNumber": 0,
+    "symbol": "NH₃",
+    "category": "Compound",
+    "state": "Unknown",
+    "color": "#E6E6FA",
+    "description": "Ammonia has a trigonal pyramidal shape and is crucial for fertilizers.",
+    "unlocked": false,
+    "structure": {
+      "atoms": [
+        { "element": "N", "x": 0, "y": 0, "bonds": [{ "to": 1, "type": "single" }, { "to": 2, "type": "single" }, { "to": 3, "type": "single" }] },
+        { "element": "H", "x": 0, "y": -1, "bonds": [{ "to": 0, "type": "single" }] },
+        { "element": "H", "x": -0.87, "y": 0.5, "bonds": [{ "to": 0, "type": "single" }] },
+        { "element": "H", "x": 0.87, "y": 0.5, "bonds": [{ "to": 0, "type": "single" }] }
       ],
       "showHydrogens": true
     }

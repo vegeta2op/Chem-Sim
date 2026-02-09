@@ -227,5 +227,17 @@ export const REACTIONS: Reaction[] = [
     "equation": "10C + 22H → C10H22",
     "description": "Synthesis of Decane.",
     "condition": "Heat"
+  },
+  {
+    "id": "rxn_18",
+    "inputs": {
+      "N": 1,
+      "H": 3
+    },
+    "output": "NH3",
+    "outputCount": 1,
+    "equation": "N + 3H → NH₃",
+    "description": "Ammonia has a trigonal pyramidal shape and is crucial for fertilizers.",
+    "condition": "Heat"
   }
 ];

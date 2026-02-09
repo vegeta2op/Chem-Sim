@@ -53,19 +53,19 @@ function App() {
 
   const handleReact = useCallback((condition: ReactionCondition) => {
     const result = checkReaction(condition);
-    
+
     if (result) {
       setShowDiscovery(true);
       setLastDiscoveryTime(new Date().toLocaleTimeString());
-      
+
       // Check if this completes the current objective
       if (currentObjective) {
         const validation = validateObjective(
           currentObjective,
-          workbenchItems.map(el => el.id),
+          [...workbenchItems.map(el => el.id), result.output],
           false // TODO: check actual bond state
         );
-        
+
         if (validation.completed) {
           const completed = completeObjective(currentObjective.id);
           if (completed) {
@@ -75,7 +75,7 @@ function App() {
         }
       }
     }
-    
+
     return !!result;
   }, [checkReaction, currentObjective, workbenchItems, validateObjective, completeObjective]);
 
@@ -87,13 +87,13 @@ function App() {
       <CanvasBackground />
 
       {/* Top Bar */}
-      <div style={{ 
-        position: 'fixed', 
-        top: '10px', 
-        right: '10px', 
-        display: 'flex', 
+      <div style={{
+        position: 'fixed',
+        top: '10px',
+        right: '10px',
+        display: 'flex',
         gap: '10px',
-        zIndex: 100 
+        zIndex: 100
       }}>
         <button
           onClick={resetAll}
@@ -137,12 +137,12 @@ function App() {
         />
 
         <div className="glass-panel" style={{ height: '100px', padding: '16px' }}>
-          <h3 style={{ 
-            fontSize: '10px', 
-            opacity: 0.5, 
-            textTransform: 'uppercase', 
-            marginBottom: '8px', 
-            letterSpacing: '1px' 
+          <h3 style={{
+            fontSize: '10px',
+            opacity: 0.5,
+            textTransform: 'uppercase',
+            marginBottom: '8px',
+            letterSpacing: '1px'
           }}>
             Reaction Log
           </h3>
@@ -171,27 +171,27 @@ function App() {
       {/* Discovery Modal */}
       {showDiscovery && lastDiscovery && (
         <div className="modal-overlay">
-          <div className="glass-panel animate-float" style={{ 
-            padding: '40px', 
-            maxWidth: '440px', 
-            width: '90%', 
-            textAlign: 'center', 
-            border: '1px solid var(--accent-blue)', 
-            boxShadow: '0 0 50px rgba(59, 130, 246, 0.3)' 
+          <div className="glass-panel animate-float" style={{
+            padding: '40px',
+            maxWidth: '440px',
+            width: '90%',
+            textAlign: 'center',
+            border: '1px solid var(--accent-blue)',
+            boxShadow: '0 0 50px rgba(59, 130, 246, 0.3)'
           }}>
             <h2 style={{ fontSize: '2rem', marginBottom: '10px', color: '#60a5fa', fontWeight: '800' }}>
               REACTION SUCCESS
             </h2>
             <div style={{ fontSize: '4rem', margin: '20px 0' }}>🧪</div>
-            <div style={{ 
-              background: 'rgba(0,0,0,0.4)', 
-              padding: '16px', 
-              borderRadius: '12px', 
-              fontFamily: 'monospace', 
-              color: '#86efac', 
-              marginBottom: '20px', 
-              border: '1px solid rgba(134, 239, 172, 0.3)', 
-              fontSize: '1.2rem' 
+            <div style={{
+              background: 'rgba(0,0,0,0.4)',
+              padding: '16px',
+              borderRadius: '12px',
+              fontFamily: 'monospace',
+              color: '#86efac',
+              marginBottom: '20px',
+              border: '1px solid rgba(134, 239, 172, 0.3)',
+              fontSize: '1.2rem'
             }}>
               {lastDiscovery.equation}
             </div>
